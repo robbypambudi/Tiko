@@ -16,4 +16,4 @@
     background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
   }
 </style>
-<script src={{ asset('js/layout.js') }} defer></script>
+@vite(['resources/js/app.js', 'resources/css/app.css'])
