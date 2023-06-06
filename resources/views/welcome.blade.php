@@ -4,26 +4,31 @@
 <!--Nav-->
 
 <!--Hero-->
-<div class="pt-24">
-    <div class="layout px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center h-screen">
+<div class="pt-24 hero-background">
+    <div class="layout px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center h-screen ">
         <!--Left Col-->
         <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-            <h1 class="my-4 text-5xl font-bold leading-tight">
-                Tiko
+            <h1 class="my-4 text-5xl font-bold leading-tight" style="font-family: Titania;">
+                TiKo
             </h1>
-            <p class="leading-normal text-2xl mb-8">
+            <h2 class="leading-normal text-2xl mb-8" style="font-family: Montserrat;">
                 Watch the most magnificant concert
+                <br class="hidden md:block">
                 you&apos;ve never seen
-            </p>
-            <button
-                class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Get your chance to see the most increadible concert you&apos;ve never seen in your life before
-            </button>
+            </h2>
+            <h3 class="leading-normal text-1xl mb-8" style="font-family: Inter;">
+                Get your chance to see the most incredible concert you&apos;ve never seen in your life before
+</h3>
         </div>
+    </div>
+</div>
+
+
+
 
     </div>
 </div>
-<div class="relative -mt-12 lg:-mt-24">
+<!-- <div class="relative -mt-12 lg:-mt-24">
     <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -45,14 +50,14 @@
             </g>
         </g>
     </svg>
-</div>
+</div> -->
 <section class="bg-white border-b py-8">
     <div class="container max-w-5xl mx-auto m-8">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
             Title
         </h2>
         <div class="w-full mb-4">
-            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            <div class="h-1 mx-auto  w-64 opacity-25 my-0 py-0 rounded-t"></div>
         </div>
         <div class="flex flex-wrap">
             <div class="w-5/6 sm:w-1/2 p-6">

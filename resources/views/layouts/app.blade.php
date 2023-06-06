@@ -3,7 +3,7 @@
 <head>
   @include('includes.head')
 </head>
-<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+<body class="leading-normal tracking-normal text-white" style="font-family: 'Source Sans Pro', sans-serif;">
   <div class="">
     <header class="">
       @include('includes.header')

@@ -16,3 +16,14 @@
     @apply mx-auto w-11/12;
   }
 }
+
+.gradient {
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+.hero-background {
+  background-image: url(/public/images/landing/bg_dashboard.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
