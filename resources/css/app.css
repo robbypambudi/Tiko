@@ -16,7 +16,6 @@
     @apply mx-auto w-11/12;
   }
 }
-
 .gradient {
   background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
 }
@@ -40,4 +39,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.is-invalid {
+  border-color: #e3342f;
 }

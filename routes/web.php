@@ -23,10 +23,14 @@ Route::get('/event', function () {
 })->name('event');
 
 
-// Login
+// Login & Register
 Route::get('/login', function () {
     return view('login');
 });
+Route::get ('/register', function () {
+    return view ('register');
+})->name('register');
+
 
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');

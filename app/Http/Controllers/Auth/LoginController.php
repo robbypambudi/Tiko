@@ -15,4 +15,17 @@ class LoginController extends Controller
     public function index(){
         return view('auth.login');
     }
+
+    public function login(Request $request){
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        if(!auth()->attempt($request->only('email', 'password'), $request->remember)){
+            return back()->withErrors([
+                'status' => 'Password atau email anda salah'
+            ]);
+        }
+        return redirect()->route('dashboard');
+    }
 }
