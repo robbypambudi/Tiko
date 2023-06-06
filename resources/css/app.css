@@ -28,6 +28,13 @@
   background-position: center;
 }
 
+.foto-background {
+  background-image: url(/public/images/landing/footer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .login-background {
   background-image: url(/public/images/login/background.png);
   background-repeat: no-repeat;

@@ -1,4 +1,4 @@
-<footer class="<img src="{{asset("images/landing/footer.png")}}" />">
+<footer class="foto-background ">
   <div class="container mx-auto px-8">
     <div class="w-full flex flex-col md:flex-row py-6">
       <div class="flex-1 mb-6 text-black">
@@ -7,8 +7,11 @@
         </a>
       </div>
       <div class="flex-1">
-        <p class="uppercase text-gray-500 md:mb-6">Home</p>
+        <p class="uppercase text-gray-500 md:mb-6"></p>
         <ul class="list-reset mb-6">
+          <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-blue-500">Home</a>
+          </li>
           <li class="mt-2 inline-block mr-2 md:block md:mr-0">
             <a href="#" class="no-underline hover:underline text-gray-800 hover:text-blue-500">Artikel</a>
           </li>

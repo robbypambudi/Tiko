@@ -540,10 +540,8 @@
                     <br />
                 </p>
                 <p class="text-blue-600 mb-8">
-                    Jl. Teknik Kimia, Keputih, Kec. Sukolilo, Kota SBY, Jawa Timur 60111
                     <br />
-                    <br />
-                    085706524162 
+                    <img src="{{asset("images/landing/hubungi.png")}}" />
                     <br />
                 </p>
             </div>
