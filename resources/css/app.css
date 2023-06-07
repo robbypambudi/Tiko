@@ -41,6 +41,13 @@
   background-position: center;
 }
 
+.event-background {
+  background-image: url(/public/images/event/bg_event.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .is-invalid {
-  border-color: #e3342f;
+  @apply !bg-red-200;
 }

@@ -26,6 +26,6 @@ class LoginController extends Controller
                 'status' => 'Password atau email anda salah'
             ]);
         }
-        return redirect()->route('dashboard');
+        return redirect()->route('event');
     }
 }
