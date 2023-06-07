@@ -10,11 +10,9 @@
         <div id="main" class="row">
             <div class="min-h-screen grid md:grid-cols-2 grid-cols-1">
                 <form action="{{ route('register.store') }}" method="POST"
-                    class="flex flex-col items-center justify-center py-4">
+                    class="flex flex-col items-center justify-center">
                     @csrf
                     <div class="w-3/4">
-                        <a href="/" class="underline">
-                            Kembali</a>
                         <h1 class="text-4xl font-bold text-center">Selamat Datang</h1>
                         @error('status')
                             <div class="text-red-500 text-center p-2 rounded">
@@ -40,10 +38,6 @@
 
                         </div>
                         <x-button class="mt-5 w-full" color="blue" label="Login" type="submit" />
-                        <div class="flex items-center justify-center mt-5">
-                            <a href="{{ route('login') }}" class="text-center text-blue-500">Sudah punya akun?
-                                Register</a>
-                        </div>
                     </div>
                 </form>
                 <div class="login-background hidden md:block">

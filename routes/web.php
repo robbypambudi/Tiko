@@ -30,6 +30,10 @@ Route::get('/detail', function () {
     return view ('detail');
 })->name('detail');
 
+Route::get('/form', function () {
+    return view ('form');
+})->name('form');
+
 
 // Login & Register
 Route::get('/login', function () {
