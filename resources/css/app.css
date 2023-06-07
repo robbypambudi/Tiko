@@ -48,6 +48,13 @@
   background-position: center;
 }
 
+.event-artis {
+  background-image: url(/public/images/landing/mahalini.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .is-invalid {
   @apply !bg-red-200;
 }

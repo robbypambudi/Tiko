@@ -26,6 +26,10 @@ Route::get('/event', function () {
     return view ('event');
 })->name('event');
 
+Route::get('/detail', function () {
+    return view ('detail');
+})->name('detail');
+
 
 // Login & Register
 Route::get('/login', function () {

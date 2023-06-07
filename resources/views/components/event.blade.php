@@ -1,9 +1,9 @@
 <div class="p-6 flex w-[360px] flex-col">
     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
         <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-            <img src="{{ asset('images/landing/mahalini.png') }}" />
+            <img src="{{ asset('images/landing/event.png') }}" />
             <div class="w-full font-bold text-xl text-gray-800 px-6">
-                Mahalini
+                Konser
             </div>
             <p class="text-gray-800 text-base px-6 mb-5">
                 lokasi

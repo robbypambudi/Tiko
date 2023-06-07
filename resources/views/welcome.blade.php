@@ -142,7 +142,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-[#0077B6] border-b py-8">
+    {{-- <section class="bg-[#0077B6] border-b py-8">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
             <h2 class="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
                 Artis Populer
@@ -235,8 +235,23 @@
                 </div>
             </div>
         </div>
+    </section> --}}
+    {{-- Artis --}}
+    <section class="bg-[#0077B6] border-b py-8">
+        <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+            <h2 class="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
+                Artis Populer
+            </h2>
+            <div class="w-full mb-4">
+                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            </div>
+            <div class="flex flex-grow">
+                <x-artis />
+                <x-artis />
+                <x-artis />
+            </div>
     </section>
-    <section class="bg-white border-b py-8">
+    {{-- <section class="bg-white border-b py-8">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
             <h2 class="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
                 Event Saat Ini
@@ -416,6 +431,21 @@
         </div>
     </section>
     </div>
+    </section> --}}
+    {{-- Event --}}
+    <section class="bg-white border-b py-8">
+        <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+            <h2 class="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
+                Event Saat Ini
+            </h2>
+            <div class="w-full mb-4">
+                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            </div>
+            <div class="flex flex-grow">
+                <x-event />
+                <x-event />
+                <x-event />
+            </div>
     </section>
     {{-- <section class="bg-white border-b py-8">
     <div class="container mx-auto flex flex-wrap pt-4 pb-12">
