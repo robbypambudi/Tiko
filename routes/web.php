@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Event\EventContoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,7 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get ('/', [HomeController::class, 'index'])->name('welcome');
 Route::get ('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/event', function () {
-    return view ('event');
-})->name('event');
+Route::get('/event', [EventContoller::class, 'index'])->name('event');
 
 Route::get('/detail', function () {
     return view ('detail');
