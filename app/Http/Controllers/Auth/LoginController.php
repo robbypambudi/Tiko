@@ -28,4 +28,10 @@ class LoginController extends Controller
         }
         return redirect()->route('event');
     }
+
+    public function logout(){
+        dd('logout');
+        auth()->logout();
+        return redirect()->route('welcome');
+    }
 }

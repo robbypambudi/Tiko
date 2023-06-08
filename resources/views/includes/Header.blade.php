@@ -19,7 +19,7 @@
       id="nav-content">
       <ul class="list-reset lg:flex justify-end flex-1 items-center">
         <li class="mr-3">
-          <a class="inline-block py-2 px-4 text-white font-bold no-underline" href="#"
+          <a href="{{route('home')}}" class="inline-block py-2 px-4 text-white font-bold no-underline" href="#"
             style="font-family: 'Inter', sans-serif;">Home</a>
         </li>
         <li class="mr-3">
@@ -27,18 +27,37 @@
             style="font-family: 'Inter', sans-serif;">Artis</a>
         </li>
         <li class="mr-3">
-          <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
+          <a href="{{route('event')}}"
+            class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
             style="font-family: 'Inter', sans-serif;">Event</a>
         </li>
+
+        {{-- if auth show profile page --}}
+        @if (Auth::check())
         <li class="mr-3">
-          <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
-            style="font-family: 'Inter', sans-serif;">Tiko Tips</a>
+          <a href="{{route('home')}}"
+            class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
+            style="font-family: 'Inter', sans-serif;">Profile</a>
         </li>
-        <!-- </ul> -->
         <li class="mr-3">
-          <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
-            style="font-family: 'Inter', sans-serif;"><img src="{{asset('images/landing/profil.png')}}" /></a>
+          <button onclick="{{Auth::logout()}}"
+            class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
+            style="font-family: 'Inter', sans-serif;">Logout</button>
         </li>
+
+        {{-- Elsee show login register --}}
+        @else
+        <li class="mr-3">
+          <a href="{{route('login')}}"
+            class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
+            style="font-family: 'Inter', sans-serif;">Login</a>
+        </li>
+        <li class="mr-3">
+          <a href="{{route('register')}}"
+            class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
+            style="font-family: 'Inter', sans-serif;">Register</a>
+        </li>
+        @endif
       </ul>
     </div>
   </div>
