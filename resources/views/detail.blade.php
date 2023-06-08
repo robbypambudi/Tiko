@@ -27,10 +27,10 @@
     {{-- </a> --}}
     </div>
     <p class="text-gray-800 text-base px-6 mb-5" style="display: flex; align-items: center;">
-        <img src="{{ asset('images/detail/location.png') }}" style="margin-right: 5px;" />Jakarta, Indonesia
-        <img src="{{ asset('images/detail/date.png') }}" style="margin-right: 5px;" />28 Mei 2023
-        <img src="{{ asset('images/detail/time.png') }}" style="margin-right: 5px;" />16.00 - 21.00
-        <img src="{{ asset('images/detail/ticket.png') }}" style="margin-right: 5px;" />30 Ticket
+        <img src="{{ asset('icons/location.png') }}" style="margin-right: 5px;" />Jakarta, Indonesia
+        <img src="{{ asset('icons/date.png') }}" style="margin-right: 5px;" />28 Mei 2023
+        <img src="{{ asset('icons/time.png') }}" style="margin-right: 5px;" />16.00 - 21.00
+        <img src="{{ asset('icons/ticket.png') }}" style="margin-right: 5px;" />30 Ticket
     </p>
 
     <div class="flex flex-wrap">

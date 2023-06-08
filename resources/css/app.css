@@ -62,6 +62,13 @@
   background-position: center;
 }
 
+.event-artisfav {
+  background-image: url(/public/images/landing/artisfav.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .is-invalid {
   @apply !bg-red-200;
 }

@@ -1,5 +1,6 @@
 @props(['artis'])
 
+
 <div class="flex-col min-w-[320px] min-h-[520px] snap-start bg-white shadow rounded-xl">
     <div class="overflow-hidden ">
         <div href="#" class="flex flex-wrap no-underline hover:no-underline">
@@ -20,7 +21,7 @@
             <div class="w-full">
                 <div class="flex justify-between">
                     <p>{{ $event->date }}</p>
-                    <p class="rounded-full bg-blue-300 px-2">{{ $event->time }}</p>
+                    <p class="rounded-full bg-[#0077B6] text-white px-2">{{ $event->time }}</p>
                 </div>
                 <p class="">{{ $event->event_name }}</p>
             </div>
