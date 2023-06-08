@@ -23,6 +23,11 @@ class Event extends Model
     ];
 
     protected $table = 'events';
+
+    public function guestStar()
+    {
+        return $this->hasMany(GuestStar::class, 'event_id', 'events.id')->where('event_id', $this->id);
+    }
     
     public function user():BelongsTo
     {

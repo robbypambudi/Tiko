@@ -1,27 +1,29 @@
-<div class="p-6 flex w-[360px] flex-col">
-    <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+@props(['artis'])
+
+<div class="flex-col min-w-[320px] min-h-[520px] snap-start bg-white shadow rounded-xl">
+    <div class="overflow-hidden ">
+        <div href="#" class="flex flex-wrap no-underline hover:no-underline">
             <img src="{{ asset('images/landing/mahalini.png') }}" />
-            <div class="w-full font-bold text-xl text-gray-800 px-6">
-                Mahalini
+            <div class="w-full text-gray-800 p-2">
+                <div class="flex justify-between">
+                    <h4 class="font-bold text-xl">
+                        {{$artis['name']}}
+                    </h4>
+                    <p>{{$artis['total']}}</p>
+                </div>
+                <p class="">Saksikan Pada :</p>
             </div>
-            <p class="text-gray-800 text-base px-6 mb-5">
-                lokasi
-                <br />
-                tanggal
-                <br />
-                waktu
-                <br />
-                tiket
-            </p>
-        </a>
-    </div>
-    <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-        <div class="flex items-center justify-center">
-            <button
-                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Selengkapnya
-            </button>
         </div>
+    </div>
+    <div class="text-black space-y-1 p-2">
+        @foreach ($artis['event'] as $event)
+        <div class="w-full">
+            <div class="flex justify-between">
+                <p>{{$event->date}}</p>
+                <p class="rounded-full bg-blue-300 px-2">{{$event->time}}</p>
+            </div>
+            <p class="">{{$event->event_name}}</p>
+        </div>
+        @endforeach
     </div>
 </div>

@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -27,6 +28,16 @@ return new class extends Migration
         Schema::table('events', function (Blueprint $table){
             $table->foreign('user_id')->references('id')->on('users');
         });
+
+        // Create trigger update performace date on guest star 
+        DB::unprepared('
+            CREATE TRIGGER update_performance_date
+            AFTER UPDATE ON events
+            FOR EACH ROW
+            BEGIN
+                UPDATE guest_star SET performance_date = NEW.date WHERE event_id = NEW.id;
+            END
+        ');
     }
 
     /**
