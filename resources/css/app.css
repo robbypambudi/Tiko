@@ -55,6 +55,13 @@
   background-position: center;
 }
 
+.event-form {
+  background-image: url(/public/images/landing/form.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .is-invalid {
   @apply !bg-red-200;
 }

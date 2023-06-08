@@ -6,13 +6,25 @@
 </head>
 
 <body class="leading-normal tracking-normal" style="font-family: 'Source Sans Pro', sans-serif;">
+    <section class="pt-10 event-artis">
+        <div class="layout px-3 mx-auto max-w-screen-lg">
+            <div class="flex flex-wrap flex-col md:flex-row items-center h-[calc(100vh-6rem)]">
+                <!--Left Col-->
+                <div class="flex flex-col w-full justify-center items-start text-center md:text-left">
+                    <!-- Konten di sini -->
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="">
         <div id="main" class="row">
             <div class="min-h-screen grid md:grid-cols-2 grid-cols-1">
                 <form action="{{ route('register.store') }}" method="POST"
-                    class="flex flex-col items-center justify-center">
+                    class="flex flex-col items-center justify-center py-4">
                     @csrf
                     <div class="w-3/4">
+                        <a href="/" class="underline">
+                            Kembali</a>
                         <h1 class="text-4xl font-bold text-center">Selamat Datang</h1>
                         @error('status')
                             <div class="text-red-500 text-center p-2 rounded">
@@ -38,6 +50,10 @@
 
                         </div>
                         <x-button class="mt-5 w-full" color="blue" label="Login" type="submit" />
+                        <div class="flex items-center justify-center mt-5">
+                            <a href="{{ route('login') }}" class="text-center text-blue-500">Sudah punya akun?
+                                Register</a>
+                        </div>
                     </div>
                 </form>
                 <div class="login-background hidden md:block">

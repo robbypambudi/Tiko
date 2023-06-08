@@ -7,9 +7,9 @@
             <div class="w-full text-gray-800 p-2">
                 <div class="flex justify-between">
                     <h4 class="font-bold text-xl">
-                        {{$artis['name']}}
+                        {{ $artis['name'] }}
                     </h4>
-                    <p>{{$artis['total']}}</p>
+                    {{-- <p>{{$artis['total']}}</p> --}}
                 </div>
                 <p class="">Saksikan Pada :</p>
             </div>
@@ -17,13 +17,13 @@
     </div>
     <div class="text-black space-y-1 p-2">
         @foreach ($artis['event'] as $event)
-        <div class="w-full">
-            <div class="flex justify-between">
-                <p>{{$event->date}}</p>
-                <p class="rounded-full bg-blue-300 px-2">{{$event->time}}</p>
+            <div class="w-full">
+                <div class="flex justify-between">
+                    <p>{{ $event->date }}</p>
+                    <p class="rounded-full bg-blue-300 px-2">{{ $event->time }}</p>
+                </div>
+                <p class="">{{ $event->event_name }}</p>
             </div>
-            <p class="">{{$event->event_name}}</p>
-        </div>
         @endforeach
     </div>
 </div>
