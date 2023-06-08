@@ -10,11 +10,10 @@ class Service
 {
     public function getPopularArtist()
     {
-        // Guest Start with artist and event
-        // $this->hasMany(Event::class, 'id', 'event_id')->where('id', $this->event_id);
         $popular = DB::table('guest_star')
             ->join('artists', 'guest_star.artist_id', '=', 'artists.id')
             ->select('artists.name', 'artists.artist_id', DB::raw('COUNT(guest_star.artist_id) as total'))
+            ->where('guest_star.performance_date', '>=', date('Y-m-d'))
             ->groupBy('artists.name', 'artists.artist_id')
             ->orderByRaw('total DESC')
             ->limit(5)
@@ -27,7 +26,7 @@ class Service
                 ->join('artists', 'guest_star.artist_id', '=', 'artists.id')
                 ->join('events', 'guest_star.event_id', '=', 'events.id')
                 ->select('events.event_name', 'events.location', 'events.date', 'events.time', 'events.description', 'events.price', 'events.capacity')
-                ->where('artists.artist_id', $popular[$i]->artist_id)
+                ->where('artists.id', $popular[$i]->artist_id)
                 ->where('events.date', '>=', date('Y-m-d'))
                 ->orderBy('events.date', 'asc')
                 ->limit(4)
@@ -41,5 +40,17 @@ class Service
             ];
         }
         return $artis_populer;
+    }
+
+    public function getUpcomingEvent()
+    {
+        $upcoming = DB::table('events')
+            ->select('event_name', 'location', 'date', 'time', 'description', 'price', 'capacity')
+            ->where('date', '>=', date('Y-m-d'))
+            ->orderBy('date', 'asc')
+            ->limit(5)
+            ->get();
+
+        return $upcoming;
     }
 }

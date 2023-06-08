@@ -19,7 +19,8 @@ class HomeController extends Controller
     public function index()
     {
         $popular = $this->service->getPopularArtist();
+        $upcoming = $this->service->getUpcomingEvent();
 
-        return view('welcome', compact('popular'));
+        return view('welcome', compact('popular', 'upcoming'));
     }
 }

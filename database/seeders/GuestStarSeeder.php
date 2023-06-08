@@ -23,7 +23,8 @@ class GuestStarSeeder extends Seeder
                 'id' => $data[0],
                 'artist_id' => $data[1],
                 'performance_time' => $data[2],
-                'event_id' => $data[3],
+                'performance_date' => $data[3],
+                'event_id' => $data[4],
             ]);
         }
 

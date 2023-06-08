@@ -1,27 +1,37 @@
-<div class="p-6 flex w-[360px] flex-col">
-    <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+@props(['event'])
+
+
+<div class="flex-col min-w-[320px] min-h-[520px] snap-start bg-white shadow rounded-xl">
+    <div class="overflow-hidden ">
+        <div class="flex flex-col">
             <img src="{{ asset('images/landing/event.png') }}" />
-            <div class="w-full font-bold text-xl text-gray-800 px-6">
-                Konser
+            <h4 class="text-black text-xl font-bold px-4 mt-1">
+                {{$event->event_name}}
+            </h4>
+            <div class="text-black px-4 space-y-2 mt-4">
+                <div class="flex gap-x-3">
+                    <img src="{{ asset('icons/location.png')}}" width="20" height="20" />
+                    <p>{{$event->location}}</p>
+                </div>
+                <div class="flex gap-x-3">
+                    <img src="{{ asset('icons/date.png')}}" width="20" height="20" />
+                    <p>{{$event->date}}</p>
+                </div>
+                <div class="flex gap-x-3">
+                    <img src="{{ asset('icons/time.png')}}" width="20" height="20" />
+                    <p>{{$event->time}}</p>
+                </div>
+                <div class="flex gap-x-3">
+                    <img src="{{ asset('icons/ticket.png')}}" width="20" height="20" />
+                    <p>{{$event->capacity}}</p>
+                </div>
             </div>
-            <p class="text-gray-800 text-base px-6 mb-5">
-                lokasi
-                <br />
-                tanggal
-                <br />
-                waktu
-                <br />
-                tiket
-            </p>
-        </a>
-    </div>
-    <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-        <div class="flex items-center justify-center">
-            <button
-                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Selengkapnya
-            </button>
+            <div class="px-4 pb-4 flex justify-between mt-4 group">
+                <h4 class="text-[#0077B6] text-2xl font-semibold">Rp.{{round($event->price)}}</h4>
+                <a href="" class="bg-[#0077B6] text-white p-2 rounded-full group-hover:scale-105">
+                    <img src="{{ asset('icons/forward.png')}}" width="20" height="20" />
+                </a>
+            </div>
         </div>
     </div>
 </div>

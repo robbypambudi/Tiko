@@ -16,8 +16,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('event_id');
             $table->time('performance_time');
-            // Default date on insert
-            $table->date('performance_date')->default(DB::raw('CURRENT_DATE'));
+            $table->date('performance_date');
             $table->unsignedBigInteger('artist_id');
             $table->timestamps();
         });
