@@ -1,129 +1,131 @@
-@extends('layouts.app')
+<!doctype html>
+<html>
+<head>
+    @include('includes.head')
+</head>
+<body class="leading-normal tracking-normal text-white" style="font-family: 'Source Sans Pro', sans-serif;">
+    <div class="">
+        <div id="main" class="row">
+            <!-- main content -->
+            <section class="layout h-screen py-8">
+                <a href="{{ url('/event') }}" class="text-blue-500 py-4">Kembali</a>
+                <img src="{{ asset('images/event/detail.png') }}" class="w-full h-full object-cover rounded-lg" />
+            </section>
+            <section class="layout">
+                <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                    @foreach ($event['guest_star'] as $item)
+                    <p>{{ $item->name }}</p>
+                    @if (!$loop->last)
+                    <p class="text-gray-600 mb-8">, </p>
+                    @endif
+                    @endforeach
+                </h3>
 
-@section('content')
-    <section class="pt-10 event-artis">
-        <div class="layout px-3 mx-auto max-w-screen-lg">
-            <div class="flex flex-wrap flex-col md:flex-row items-center h-[calc(100vh-6rem)]">
-                <!--Left Col-->
-                <div class="flex flex-col w-full justify-center items-start text-center md:text-left">
-                    <!-- Konten di sini -->
+                <div class="text-black flex justify-between items-center ">
+                    <div class="flex items-center justify-start space-x-2">
+                        <img src="{{ asset('icons/location.png') }}" width="30" height="30" />
+                        <p>{{$event['event']->location}}</p>
+                    </div>
+                    <div class="flex items-center justify-start space-x-2">
+                        <img src="{{ asset('icons/date.png') }}" width="30" height="30" />
+                        <p>{{$event['event']->date}}</p>
+                    </div>
+                    <div class="flex items-center justify-start space-x-2">
+                        <img src="{{ asset('icons/time.png') }}" width="30" height="30" />
+                        <p>{{$event['event']->time}}</p>
+                    </div>
+                    <div class="flex items-center justify-start space-x-2">
+                        <img src="{{ asset('icons/ticket.png') }}" width="30" height="30" />
+                        <p>{{$event['event']->capacity}}</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    {{-- <div class="w-full font-bold text-xl text-gray-800 px-6">
-                    Mahalini
+            <section class="layout">
+                <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+                    <h3 class="text-2xl text-gray-800 leading-none mb-3">
+                        Tentang Event
+                    </h3>
+                    <p class="text-gray-600 mb-8">
+                        {{$event['event']->description}}
+                    </p>
                 </div>
-                <p class="text-gray-800 text-base px-6 mb-5">
-                    lokasi
-                    <br />
-                    tanggal
-                    <br />
-                    waktu
-                    <br />
-                    tiket
-                </p> --}}
-    {{-- </a> --}}
-    </div>
-    <p class="text-gray-800 text-base px-6 mb-5" style="display: flex; align-items: center;">
-        <img src="{{ asset('icons/location.png') }}" style="margin-right: 5px;" />Jakarta, Indonesia
-        <img src="{{ asset('icons/date.png') }}" style="margin-right: 5px;" />28 Mei 2023
-        <img src="{{ asset('icons/time.png') }}" style="margin-right: 5px;" />16.00 - 21.00
-        <img src="{{ asset('icons/ticket.png') }}" style="margin-right: 5px;" />30 Ticket
-    </p>
+                <div class="">
+                    <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                        Timeline Event
+                    </h3>
+                    @if ($event['timeline'] != null)
+                    <div class="h-[460px]">
+                        <div class="h-full w-1 bg-[#1875DB] rounded-full flex justify-between flex-col items-center">
+                            <div class="flex gap-x-8 relative ">
+                                <div
+                                    class="w-[60px] h-[60px] bg-[#1875DB] absolute rounded-full flex items-center justify-center -translate-x-1/2">
+                                    <p class="font-semibold text-xl">1</p>
+                                </div>
+                                <div class="text-black absolute w-[400px] left-12">
+                                    <h3 class="font-semibold text-xl">Penukaran Tiket & Open Gate </h3>
+                                    <p> 12.00 - 13.00</p>
+                                    <p>Tukar tiketmu di loket yang telah disediakan</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-x-8 relative ">
+                                <div
+                                    class="w-[60px] h-[60px] bg-[#1875DB] absolute rounded-full flex items-center justify-center -translate-x-1/2">
+                                    <p class="font-semibold text-xl">1</p>
+                                </div>
+                                <div class="text-black absolute w-[400px] left-12">
+                                    <h3 class="font-semibold text-xl">Pembukaan </h3>
+                                    <p> 12.00 - 13.00</p>
+                                    <p>Tukar tiketmu di loket yang telah disediakan</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-x-8 relative ">
+                                <div
+                                    class="w-[60px] h-[60px] bg-[#1875DB] absolute rounded-full flex items-center justify-center -translate-x-1/2">
+                                    <p class="font-semibold text-xl">1</p>
+                                </div>
+                                <div class="text-black absolute w-[400px] left-12">
+                                    <h3 class="font-semibold text-xl">Konser</h3>
+                                    <p> 12.00 - 13.00</p>
+                                    <p>Tukar tiketmu di loket yang telah disediakan</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-x-8 relative ">
+                                <div
+                                    class="w-[60px] h-[60px] bg-[#1875DB] absolute rounded-full flex items-center justify-center -translate-x-1/2">
+                                    <p class="font-semibold text-xl">1</p>
+                                </div>
+                                <div class="text-black absolute w-[400px] left-12">
+                                    <h3 class="font-semibold text-xl">Penutupan</h3>
+                                    <p> 12.00 - 13.00</p>
+                                    <p>Tukar tiketmu di loket yang telah disediakan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @else
+                    <div class="text-black">
+                        <p>Belum ada timeline</p>
+                    </div>
+                    @endif
 
-    <div class="flex flex-wrap">
-        <div class="w-1/4">
-            <div class="bg-red-500 text-white h-26 flex">
-                <p>
-                    <img src="{{ asset('images/detail/location.png') }}" style="margin-right: 5px;" />Jakarta, Indonesia
-                </p>
-            </div>
-        </div>
-        <div class="w-1/4">
-            <div class="bg-blue-500 text-white h-26 flex">
-                <p>
-                    <img src="{{ asset('images/detail/date.png') }}" style="margin-right: 5px;" />28 Mei 2023
-                </p>
-            </div>
-        </div>
-        <div class="w-1/4">
-            <div class="bg-yellow-500 text-white h-26 flex">
-                <p>
-                    <img src="{{ asset('images/detail/time.png') }}" style="margin-right: 5px;" />16.00 - 21.00
-                </p>
-            </div>
-        </div>
-        <div class="w-1/4">
-            <div class="bg-green-500 text-white h-26 flex">
-                <p>
-                    <img src="{{ asset('images/detail/ticket.png') }}" style="margin-right: 5px;" />30 Ticket
-                </p>
-            </div>
-        </div>
-    </div>
+                    @if ($pre_order != null)
+                    <div class="flex items-center justify-center my-12">
+                        <a class="w-full bg-blue-500 rounded-xl px-4 py-2 text-center" href="{{route('chart')}}"> Cek
+                            Keranjang </a>
+                    </div>
+                    @else
 
-    {{-- <h3 class="text-x1 text-gray-800 font-bold leading-none mb-3">
-            <span class="mr-2"><img src="{{ asset('images/detail/location.png') }}" />lokasi</span>
-            <span class="mr-2"><img src="{{ asset('images/detail/date.png') }}" />tanggal</span>
-            <span class="mr-2"><img src="{{ asset('images/detail/time.png') }}" />waktu</span>
-            <span class="mr-2"><img src="{{ asset('images/detail/ticket.png') }}" />tiket</span>
-        </h3> --}}
+                    <div class="flex items-center justify-center my-12">
+                        <a class="w-full bg-blue-500 rounded-xl px-4 py-2 text-center"
+                            href="{{ url('/add_chart/'.$event['event']->id ) }}"> Masukkan Keranjang </a>
+                    </div>
+                    @endif
+            </section>
+        </div>
+        <footer class="row">
+            @include('includes.footer')
+        </footer>
     </div>
-    <div class="container mx-auto flex flex-wrap pt-4 pb-0">
-        <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-            Mahalini
-        </h3>
-    </div>
-    <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-        <h3 class="text-2xl text-gray-800 leading-none mb-3">
-            Tentang Event
-        </h3>
-        <p class="text-gray-600 mb-8">
-            Schematics adalah acara konser musik yang diadakan oleh departemen teknik informatika. Konser ini mengundang
-            artis terkenal Indonesia untuk tampil di panggung. Penonton akan menikmati penampilan live yang mengagumkan
-            dari artis-artis tersebut, sambil merasakan semangat dan kegembiraan dalam musik. Schematics menjadi wadah
-            bagi para pecinta musik dan penggemar artis untuk berkumpul dan menikmati pengalaman musik yang tak
-            terlupakan.
-            <br />
-            <br />
-        </p>
-        <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-            Timeline Event
-        </h3>
-        <p class="text-gray-600 mb-8">
-            <br />
-            <br />
-        </p>
-    </div>
-    <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-        <p class="text-gray-600 mb-8">
-            Penukaran Tiket & Open Gate
-            <br />
-            12.00 - 12.30
-            <br />
-            Tukar tiketmu dengan gelang ke panitia
-            <br />
-            <br />
-        </p>
-        <br />
-        <p class="text-gray-600 mb-8">
-            Penukaran Tiket & Open Gate
-            <br />
-            12.00 - 12.30
-            <br />
-            Tukar tiketmu dengan gelang ke panitia
-            <br />
-            <br />
-        </p>
-    </div>
-    <div class="flex items-center justify-center">
-        <button
-            class="w-[95%] mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-            Masukkan Keranjang
-        </button>
-
-
-    </div>
-@endsection
+</body>
+</html>

@@ -28,7 +28,8 @@
             </div>
             <div class="px-4 pb-4 flex justify-between mt-4 group">
                 <h4 class="text-[#0077B6] text-2xl font-semibold">Rp.{{round($event->price)}}</h4>
-                <a href="" class="bg-[#0077B6] text-white p-2 rounded-full group-hover:scale-105">
+                <a href="{{url('/event/'. $event->id)}}"
+                    class="bg-[#0077B6] text-white p-2 rounded-full group-hover:scale-105">
                     <img src="{{ asset('icons/forward.png')}}" width="20" height="20" />
                 </a>
             </div>

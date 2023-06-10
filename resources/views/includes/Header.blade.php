@@ -35,14 +35,15 @@
         {{-- if auth show profile page --}}
         @if (Auth::check())
         <li class="mr-3">
-          <a href="{{route('home')}}"
+          <a href="{{route('chart')}}"
             class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
-            style="font-family: 'Inter', sans-serif;">Profile</a>
+            style="font-family: 'Inter', sans-serif;">My Event</a>
         </li>
         <li class="mr-3">
-          <button onclick="{{Auth::logout()}}"
+          <a href="{{route('logout')}}"
             class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
-            style="font-family: 'Inter', sans-serif;">Logout</button>
+            style="font-family: 'Inter', sans-serif;">Logout</a>
+
         </li>
 
         {{-- Elsee show login register --}}

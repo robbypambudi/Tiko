@@ -22,6 +22,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->decimal('price', 12, 2);
             $table->integer('capacity');
+            $table->integer('pendaftar')->nullable()->default(0);
+            $table->unsignedBigInteger('detail_event_id')->nullable();
             $table->timestamps();
         });
 

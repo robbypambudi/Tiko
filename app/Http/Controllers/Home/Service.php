@@ -45,7 +45,7 @@ class Service
     public function getUpcomingEvent()
     {
         $upcoming = DB::table('events')
-            ->select('event_name', 'location', 'date', 'time', 'description', 'price', 'capacity')
+            ->select('event_name', 'location', 'date', 'time', 'description', 'price', 'capacity', 'id')
             ->where('date', '>=', date('Y-m-d'))
             ->orderBy('date', 'asc')
             ->limit(5)

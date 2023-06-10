@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Chart\ChartController;
 use App\Http\Controllers\Event\EventContoller;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,11 @@ Route::get ('/', [HomeController::class, 'index'])->name('welcome');
 Route::get ('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/event', [EventContoller::class, 'index'])->name('event');
+Route::get('/event/{id}', [EventContoller::class, 'detail'])->name('event.detail')->middleware('auth');
+
+Route::get('/add_chart/{id}', [ChartController::class, 'addKeranjang'])->name('add_chart')->middleware('auth');
+Route::get('/chart', [ChartController::class, 'index'])->name('chart')->middleware('auth');
+Route::get('remove_chart/{id}', [ChartController::class, 'removeKeranjang'])->name('remove_chart')->middleware('auth');
 
 Route::get('/detail', function () {
     return view ('detail');
@@ -35,6 +42,10 @@ Route::get('/form', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect()->route('login');
+})->name('logout');
 Route::get ('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.store');
 
