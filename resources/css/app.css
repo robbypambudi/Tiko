@@ -69,6 +69,13 @@
   background-position: center;
 }
 
+.header-form {
+  background-image: url(/public/images/landing/informasi_personal.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .is-invalid {
   @apply !bg-red-200;
 }

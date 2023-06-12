@@ -124,7 +124,7 @@
     <div class="pt-24 event-artisfav">
         <div class="layout px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center h-screen ">
             <button
-                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-4 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                 Selengkapnya
             </button>
         </div>

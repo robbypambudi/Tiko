@@ -6,58 +6,56 @@
 </head>
 
 <body class="leading-normal tracking-normal" style="font-family: 'Source Sans Pro', sans-serif;">
-    <section class="pt-10 event-artis">
-        <div class="layout px-3 mx-auto max-w-screen-lg">
-            <div class="flex flex-wrap flex-col md:flex-row items-center h-[calc(100vh-6rem)]">
-                <!--Left Col-->
-                <div class="flex flex-col w-full justify-center items-start text-center md:text-left">
-                    <!-- Konten di sini -->
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="pt-24 header-form">
+        {{-- <div class="layout px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center h-screen ">
+        </div> --}}
+    </div>
     <div class="">
         <div id="main" class="row">
-            <div class="min-h-screen grid md:grid-cols-2 grid-cols-1">
+            <div>
                 <form action="{{ route('register.store') }}" method="POST"
                     class="flex flex-col items-center justify-center py-4">
                     @csrf
                     <div class="w-3/4">
                         <a href="/" class="underline">
                             Kembali</a>
-                        <h1 class="text-4xl font-bold text-center">Selamat Datang</h1>
                         @error('status')
                             <div class="text-red-500 text-center p-2 rounded">
                                 {{ $message }}
                             </div>
                         @enderror
                         <div class="mt-5 flex flex-col space-y-4">
-                            <x-input id="first_name" label="First Name" type="text" name="first_name"
-                                :value="old('first_name')" required autofocus placeholder="First Name"
+                            <x-input id="first_name" label="Nama Depan" type="text" name="first_name"
+                                :value="old('first_name')" required autofocus placeholder="Nama Depan"
                                 class="block mt-1 w-full" />
-                            <x-input id="last_name" label="Last Name" type="text" name="last_name" :value="old('last_name')"
-                                required autofocus placeholder="Last Name" class="block mt-1 w-full " />
-                            <x-input id="phone_number" label="Phone Number" type="text" name="phone_number"
+                            <x-input id="last_name" label="Nama Belakang" type="text" name="last_name"
+                                :value="old('last_name')" required autofocus placeholder="Nama Belakang"
+                                class="block mt-1 w-full " />
+                            <x-input id="phone_number" label="Telepon" type="text" name="phone_number"
                                 :value="old('phone_number')" required autofocus placeholder="Your Phone Number"
                                 class="block mt-1 w-full " />
-                            <x-input id="email" label="Email" type="text" name="email" :value="old('email')"
-                                required autofocus placeholder="Email" class="block mt-1 w-full" />
-                            <x-input id="password" label="Password" type="password" name="password" required
-                                autocomplete="current-password" placeholder="Password" class="block mt-1 w-full" />
-                            <x-input id="password_confirmation" label="Password Confirmation" type="password"
-                                name="password_confirmation" required autocomplete="current-password"
-                                placeholder="Password Confirmation" class="block mt-1 w-full" />
+                            {{-- Nomor Identitas / NIK belum ada di DataBase --}}
+                            <x-input id="nik" label="Nomor Identitas / NIK" type="text" name="nik"
+                                :value="old('nik')" required autofocus placeholder="Nomor Identitas / NIK"
+                                class="block mt-1 w-full" />
+                            {{-- Tanggal Lahir Belum --}}
+                            <x-input id="nik" label="Tanggal Lahir" type="text" name="nik"
+                                :value="old('nik')" required autofocus placeholder="Tanggal Lahir"
+                                class="block mt-1 w-full" />
+                            {{-- Jenis Kelamin Belum --}}
+                            <x-input id="nik" label="Jenis Kelamin" type="text" name="nik"
+                                :value="old('nik')" required autofocus placeholder="Jenis Kelamin"
+                                class="block mt-1 w-full" />
+                            {{-- goog Belum --}}
+                            <x-input id="nik" label="goog" type="text" name="nik" :value="old('nik')"
+                                required autofocus placeholder="goog" class="block mt-1 w-full" />
 
                         </div>
-                        <x-button class="mt-5 w-full" color="blue" label="Login" type="submit" />
-                        <div class="flex items-center justify-center mt-5">
-                            <a href="{{ route('login') }}" class="text-center text-blue-500">Sudah punya akun?
-                                Register</a>
-                        </div>
+                        {{-- tombol harusnya di kanan, menuju page "keranjang" --}}
+                        <x-button class="mt-5 ml-auto" color="blue" label="Selanjutnya" type="submit"
+                            href="/keranjang" />
                     </div>
                 </form>
-                <div class="login-background hidden md:block">
-                </div>
             </div>
         </div>
     </div>
