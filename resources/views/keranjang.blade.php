@@ -24,10 +24,11 @@
                         @enderror --}}
 
                         <div class="w-5/6 sm:w-1/2 p-6">
-                            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                            <h3 class="text-3xl text-white font-bold leading-none mb-3">
                                 Tiket
                             </h3>
                         </div>
+
 
 
 
@@ -36,8 +37,8 @@
 
 
                         <div style="display: flex; justify-content: space-between;">
-                            {{-- tombol kembali hariusnya warna putih tapi kok nabrak --}}
-                            <x-button class="mt-5" color="blue" label="Kembali" type="submit" href="/" />
+                            {{-- tombol kembali belum di styling --}}
+                            <a href="/form" class="mt-5 underline text-blue-500">Kembali</a>
                             <x-button class="mt-5" color="blue" label="Bayar" type="submit" href="/pembayaran" />
                         </div>
                     </div>

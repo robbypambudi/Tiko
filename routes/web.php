@@ -41,10 +41,17 @@ Route::get('/keranjang', function () {
     return view ('keranjang');
 })->name('keranjang');
 
+Route::get('/bayar', function () {
+    return view ('bayar');
+})->name('bayar');
+
+Route::get('/bayar', function () {
+    return view ('bayar');
+})->name('bayar');
 
 // Login & Register
-Route::get('/login', function () {
-    return view('login');
+Route::get('/favorite', function () {
+    return view('favorite');
 });
 Route::get('/logout', function () {
     Auth::logout();
