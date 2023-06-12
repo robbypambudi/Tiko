@@ -69,8 +69,16 @@
   background-position: center;
 }
 
+/* form pembayaran */
 .header-form {
   background-image: url(/public/images/landing/informasi_personal.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-keranjang {
+  background-image: url(/public/images/landing/keranjang.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

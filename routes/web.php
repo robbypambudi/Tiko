@@ -37,6 +37,10 @@ Route::get('/form', function () {
     return view ('form');
 })->name('form');
 
+Route::get('/keranjang', function () {
+    return view ('keranjang');
+})->name('keranjang');
+
 
 // Login & Register
 Route::get('/login', function () {

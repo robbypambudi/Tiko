@@ -17,8 +17,6 @@
                     class="flex flex-col items-center justify-center py-4">
                     @csrf
                     <div class="w-3/4">
-                        <a href="/" class="underline">
-                            Kembali</a>
                         @error('status')
                             <div class="text-red-500 text-center p-2 rounded">
                                 {{ $message }}
@@ -52,8 +50,13 @@
 
                         </div>
                         {{-- tombol harusnya di kanan, menuju page "keranjang" --}}
-                        <x-button class="mt-5 ml-auto" color="blue" label="Selanjutnya" type="submit"
-                            href="/keranjang" />
+                        <div style="display: flex; justify-content: space-between;">
+                            {{-- tombol kembali hariusnya warna putih tapi kok nabrak --}}
+                            <x-button class="mt-5" color="blue" label="Kembali" type="submit" href="/" />
+                            <x-button class="mt-5" color="blue" label="Selanjutnya" type="submit"
+                                href="/keranjang" />
+                        </div>
+
                     </div>
                 </form>
             </div>
