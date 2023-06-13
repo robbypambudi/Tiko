@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Event;
 
+use App\Models\DetailEvent;
+use App\Models\DetailOrder;
 use App\Models\GuestStar;
+use App\Models\Order;
 use App\Models\Pre_Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,7 +24,6 @@ class Service
 
         return $upcoming;
     }
-
 
     public function getEventById($id)
     {
@@ -67,5 +69,18 @@ class Service
             ->first();
 
         return $pre_order ? $pre_order : null;
+    }
+
+    public function storeDetailOrder($data)
+    {
+        $detail_order = DetailOrder::create($data);
+        
+        $orders = Order::where('order_code', $data['order_code'])->get();
+        
+        foreach ($orders as $order) {
+            $order->detail_order_id = $detail_order->id;
+            $order->save();
+        }
+
     }
 }

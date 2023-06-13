@@ -111,14 +111,14 @@
 
                     @if ($pre_order != null)
                     <div class="flex items-center justify-center my-12">
-                        <a class="w-full bg-blue-500 rounded-xl px-4 py-2 text-center" href="{{route('chart')}}"> Cek
+                        <a class="w-full bg-blue-500 rounded-xl px-4 py-2 text-center" href="{{route('cart')}}"> Cek
                             Keranjang </a>
                     </div>
                     @else
 
                     <div class="flex items-center justify-center my-12">
                         <a class="w-full bg-blue-500 rounded-xl px-4 py-2 text-center"
-                            href="{{ url('/add_chart/'.$event['event']->id ) }}"> Masukkan Keranjang </a>
+                            href="{{ url('/add_cart/'.$event['event']->id ) }}"> Masukkan Keranjang </a>
                     </div>
                     @endif
             </section>

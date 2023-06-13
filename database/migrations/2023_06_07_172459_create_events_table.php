@@ -40,6 +40,25 @@ return new class extends Migration
                 UPDATE guest_star SET performance_date = NEW.date WHERE event_id = NEW.id;
             END
         ');
+
+        // Function to check if event is full
+
+        DB::unprepared('
+            CREATE FUNCTION is_full(event_id INT) RETURNS BOOLEAN
+            BEGIN
+                DECLARE capacity INT;
+                DECLARE pendaftar INT;
+                DECLARE is_full BOOLEAN;
+                SELECT capacity INTO capacity FROM events WHERE id = event_id;
+                SELECT pendaftar INTO pendaftar FROM events WHERE id = event_id;
+                IF pendaftar >= capacity THEN
+                    SET is_full = TRUE;
+                ELSE
+                    SET is_full = FALSE;
+                END IF;
+                RETURN is_full;
+            END
+        ');
     }
 
     /**
@@ -47,6 +66,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        DB::unprepared('DROP FUNCTION IF EXISTS is_full');
+        DB::unprepared('DROP TRIGGER IF EXISTS update_performance_date');
         Schema::dropIfExists('event');
     }
 };

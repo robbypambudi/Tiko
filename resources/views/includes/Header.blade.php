@@ -35,15 +35,17 @@
         {{-- if auth show profile page --}}
         @if (Auth::check())
         <li class="mr-3">
-          <a href="{{route('chart')}}"
-            class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
-            style="font-family: 'Inter', sans-serif;">My Event</a>
+          <a class="relative block" href="/cart">
+            <img src="{{asset('/icons/cart.png')}}" width="30" height="30"></img>
+            <span
+              class="absolute -top-4 -right-2 bg-white text-red-500 font-bold rounded-full w-5 h-5 flex text-sm items-center justify-center">{{count(auth()->user()->unreadNotifications)}}</span>
+          </a>
+
         </li>
         <li class="mr-3">
           <a href="{{route('logout')}}"
             class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#"
             style="font-family: 'Inter', sans-serif;">Logout</a>
-
         </li>
 
         {{-- Elsee show login register --}}
