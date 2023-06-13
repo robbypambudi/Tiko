@@ -132,6 +132,10 @@
 
     <section class="bg-white border-b py-8">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+            <a href="/event"
+                class="text-1xl right-align font-bold font-Inter text-[#0077B6] text-large flex justify-end w-full">
+                Lihat Semua
+            </a>
             <h2 class="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
                 Artis Populer
             </h2>
@@ -147,6 +151,10 @@
 
     <section class="bg-[#0077B6] border-b py-8">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+            <a href="/event"
+                class="text-1xl right-align font-bold font-Inter text-white text-large flex justify-end w-full">
+                Lihat Semua
+            </a>
             <h2 class="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
                 Event Saat Ini
             </h2>
