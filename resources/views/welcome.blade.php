@@ -123,16 +123,16 @@
 
     <div class="pt-24 event-artisfav">
         <div class="layout px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center h-screen ">
-            <button
+            <a href="/event"
                 class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                 Selengkapnya
-            </button>
+            </a>
         </div>
     </div>
 
     <section class="bg-white border-b py-8">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-            <a href="/event"
+            <a href=""
                 class="text-1xl right-align font-bold font-Inter text-[#0077B6] text-large flex justify-end w-full">
                 Lihat Semua
             </a>
