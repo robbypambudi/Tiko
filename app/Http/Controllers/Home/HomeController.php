@@ -23,4 +23,10 @@ class HomeController extends Controller
 
         return view('welcome', compact('popular', 'upcoming'));
     }
+
+    public function myticket(){
+        $user_id = Auth::user()->id;
+        $order = $this->service->getOrderByUserId($user_id, 'success');
+        return view('myticket', compact('order'));
+    }
 }

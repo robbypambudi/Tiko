@@ -54,9 +54,9 @@ class CartController extends Controller
         
         // Read notification
         $user = User::find(Auth::user()->id);
-        $user->unreadNotifications->where('id', $request->notification_id)->markAsRead();
-        
-
+        foreach ($user->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
         return redirect()->route('personal-information', $order_code)->with('success', 'Berhasil checkout');
     }
 }

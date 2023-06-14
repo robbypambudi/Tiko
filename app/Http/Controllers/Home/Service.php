@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Models\GuestStar;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -52,5 +53,13 @@ class Service
             ->get();
 
         return $upcoming;
+    }
+
+    public function getOrderByUserId($user_id, $status){
+        $order = Order::where('user_id', $user_id)
+            ->where('status', $status)
+            ->get();
+
+        return $order;
     }
 }

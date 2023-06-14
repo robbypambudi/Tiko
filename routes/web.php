@@ -41,6 +41,7 @@ Route::get('/personal-information/{order_code}', [EventDetailController::class, 
 Route::post('/payment', [PaymentController::class, 'store'])->name('payment.store');
 Route::get('/payment/{order_code}', [PaymentController::class, 'index'])->name('payment');
 
+Route::get('/myticket', [HomeController::class, 'myticket'])->name('myticket')->middleware('auth');
 
 Route::get('/detail', function () {
     return view ('detail');
